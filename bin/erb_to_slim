@@ -19,7 +19,7 @@ Dir.chdir Dir.pwd do
     stream.replace_tag_with_class
     stream.finally_clean_up
 
-    File.open("#{File.basename(file, '.erb')}.slim", "w") do |f|
+    File.open("#{File.dirname(file)}/#{File.basename(file, '.erb')}.slim", "w") do |f|
       f.write(stream)
     end
     File.rename(file, "#{file}.bak")
