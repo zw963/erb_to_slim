@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-require_relative 'pattern'
+require 'erb_to_slim/pattern'
 
 module ErbToSlim
   module Engine
