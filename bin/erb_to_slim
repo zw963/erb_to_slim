@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+
+require_relative '../lib/erb_to_slim'
+
+Dir.chdir Dir.pwd do
+  Dir['**/*.{html.erb}'].each do |file|
+    include ErbToSlim::Engine
+
+    stream = File.read(file)
+
+    stream.markup_js_tag
+    stream.cleanup_close_tag
+    stream.replace_html_tag
+    stream.replace_erb_exec_tag
+    stream.replace_erb_eval_tag
+    stream.replace_string_literal
+    stream.replace_tag_with_id
+    stream.replace_tag_with_class
+    stream.finally_clean_up
+
+    File.open("#{File.basename(file, '.erb')}.slim", "w") do |f|
+      f.write(stream)
+    end
+    File.rename(file, "#{file}.bak")
+  end
+end
