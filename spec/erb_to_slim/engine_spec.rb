@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 
-require_relative '../lib/erb_to_slim/engine'
+require_relative '../../lib/erb_to_slim/engine'
 
 describe ErbToSlim::Engine do
   String.send :include, ErbToSlim::Engine

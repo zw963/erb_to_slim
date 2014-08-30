@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 
-require_relative '../lib/erb_to_slim/pattern'
+require_relative '../../lib/erb_to_slim/pattern'
 
 describe ErbToSlim::Pattern do
   include ErbToSlim::Pattern
