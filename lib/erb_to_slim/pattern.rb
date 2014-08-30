@@ -25,7 +25,7 @@ module ErbToSlim
     end
 
     def erb_exec_tag
-      /<%(?!=)\s*((?m:.*?))\s*-?%>/
+      /<%(?!=)-?\s*((?m:.*?))\s*-?%>/
     end
 
     def close_tag

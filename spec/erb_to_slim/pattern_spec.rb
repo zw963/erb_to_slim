@@ -30,6 +30,8 @@ HERE
     erb_exec_tag.match('<% any char %>').wont_be_nil
     erb_exec_tag.match('<% any char %>').wont_be_nil
     erb_exec_tag.match('<% any char -%>').wont_be_nil
+    erb_exec_tag.match('<%- any char -%>').wont_be_nil
+    $1.must_equal 'any char'
     erb_exec_tag.match('<%
 for i in 1..10
   p i
