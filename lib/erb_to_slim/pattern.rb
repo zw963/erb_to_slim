@@ -33,7 +33,7 @@ module ErbToSlim
     end
 
     def html_tag
-      /( *)<(\w+)(.*?) *(?<!%)\/?> *(.*)?/
+      /^(#{indentation})<(\w+)(.*?) *(?<!%)\/?> *(.*)?/
     end
 
     def erb_eval_tag

@@ -122,4 +122,26 @@ end
     'div class="class-1 class-2"'.replace_tag_with_class.must_equal '.class-1.class-2'
     'p#id style="style" class="class-1 class-2"'.replace_tag_with_class.must_equal 'p#id.class-1.class-2 style="style"'
   end
+
+  it "without replace html tags which not in line beginning" do
+    erb = <<-'HERE'
+            <b><span style="font-size:14.0pt;line-height:150%;font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;
+            mso-bidi-font-family:Tahoma;color:#601606;mso-themecolor:accent1; margin-left:40px; text-indent:2em;mso-themeshade:
+            191">关于微大学</span></b><span lang="EN-US" style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot; margin-left:10px;
+            mso-bidi-font-family:Tahoma;color:#999;mso-themecolor:background1;
+            mso-themeshade:217">About us</span><b><span lang="EN-US" style="font-size:14.0pt;line-height:150%;font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;
+            mso-bidi-font-family:Tahoma;color:#365F91;mso-themecolor:accent1;mso-themeshade:
+            191"><o:p></o:p></span></b>
+HERE
+  slim = <<-'HERE'
+            b <span style="font-size:14.0pt;line-height:150%;font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;
+            mso-bidi-font-family:Tahoma;color:#601606;mso-themecolor:accent1; margin-left:40px; text-indent:2em;mso-themeshade:
+            191">关于微大学</span></b><span lang="EN-US" style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot; margin-left:10px;
+            mso-bidi-font-family:Tahoma;color:#999;mso-themecolor:background1;
+            mso-themeshade:217">About us</span><b><span lang="EN-US" style="font-size:14.0pt;line-height:150%;font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;
+            mso-bidi-font-family:Tahoma;color:#365F91;mso-themecolor:accent1;mso-themeshade:
+            191"><o:p></o:p></span></b>
+HERE
+erb.replace_html_tag.must_equal slim
+  end
 end

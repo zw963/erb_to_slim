@@ -57,6 +57,10 @@ end'
     $2.must_equal 'input'
     $3.must_equal ' type="type" name="name" value="value"'
     $4.must_equal ''
+    html_tag.match('</span> <b><span lang="EN-US" style="font-size:14.0pt;line-height:150%;font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;
+            mso-bidi-font-family:Tahoma;color:#365F91;mso-themecolor:accent1;mso-themeshade:
+            191"><o:p></o:p></span>')
+    $&.must_be_nil
   end
 
   specify do
