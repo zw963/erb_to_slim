@@ -1,4 +1,5 @@
-# ErbToSlim
+# ErbToSlim [![Build Status](https://travis-ci.org/zw963/erb_to_slim.svg?branch=master)](https://travis-ci.org/zw963/erb_to_slim)
+
 
 The most stupid ERB to Slim Converter.
 
