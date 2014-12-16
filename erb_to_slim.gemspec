@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 require File.expand_path('../lib/erb_to_slim/version', __FILE__)
 
@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.files                       = `git ls-files bin lib *.md LICENSE`.split("\n")
   s.executables                 = `git ls-files -- bin/*`.split("\n").map{|f| File.basename(f) }
 
-  s.add_development_dependency 'ritual'
+  s.add_development_dependency 'ritual', '~>0.4'
 end
