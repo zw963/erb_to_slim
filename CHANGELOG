@@ -2,3 +2,4 @@
   * Use new gem template rewrite README, gemspec
   * Add CHANGELOG and LICENSE
   * Use ritual manage version.
+  * Change version.rb to conform to ritual spec.
