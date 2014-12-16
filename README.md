@@ -1,46 +1,66 @@
-# ErbToSlim [![Build Status](https://travis-ci.org/zw963/erb_to_slim.svg?branch=master)](https://travis-ci.org/zw963/erb_to_slim)
-
+# ErbToSlim [![Build Status](https://travis-ci.org/zw963/erb_to_slim.svg?branch=master)](https://travis-ci.org/zw963/erb_to_slim) [![Gem Version](https://badge.fury.io/rb/erb_to_slim.svg)](http://badge.fury.io/rb/erb_to_slim)
 
 The most stupid ERB to Slim Converter.
 
+## Philosophy
+
+Convert `html.erb` to `html.slim` directly with REGEXP.
+
+  * Minimum modified, no indentation or outline changed.
+  * No any gem dependency, YEAH!
+  
+## Getting Started
+
+Install via Rubygems
+
+    $ gem install erb_to_slim
+
+OR ...
+
+Add to your Gemfile
+
+    gem 'erb_to_slim'
+
 ## Usage
-```sh
-$ gem install erb_to_slim
-```
 
-Goto ERB template directory:
+Goto your's project views directory.
 
-```sh
-$ erb_to_slim
-```
+    $ erb_to_slim
 
-It will convert all `*.html.erb` files in current directory and subdirectory to `*.html.slim`, 
-and rename original file to `*.html.erb.bak`.
+This will convert all `*.html.erb` to `*.html.slim` under current directory recursively.
+old file will backup as `*.html.erb.bak`.
 
-## How it works
+## Support
 
-[ERbToSlim](https://github.com/zw963/erb_to_slim) convert ERB to Slim directly with REGEXP.
+  * MRI 1.9+
+  * Rubinius 2.2+
+
 You need Ruby 1.9+ to support the newest regular expression syntax.
 
-## Feature
-* Minimum modified, not change indentation/outline.
-* No any gem dependency, YEAH!
-
 ## Limitations
-* Only support html.erb format.
-* This gem just do match and replace with REGEXP, not do any syntactic analysis or
-  indent detection, so, before process, please format ERB file with your's favorate editor.
-* This gem is not test fully, consider all cases is not possible.
-  So, before you try, ensure about you well understood Slim,
-  and can fix any unexpected error manually.
+  * Only support html.erb format.
+  * This gem just do match and replace with REGEXP, not do any syntactic analysis or
+    indent detection, so, before process, please format ERB file with your's favorate editor.
+  * This gem is not test fully, consider all cases is not possible.
+    So, before you try, ensure about you well understood Slim,
+    and can fix any unexpected error manually.
+  
+## History
 
-## Author
+  See [CHANGELOG](https://github.com/zw963/erb_to_slim/blob/master/CHANGELOG) for details.
 
-Billy.zheng (zw963)
+## Contributing
 
-## OFFICIAL REPO
-https://github.com/zw963/erb_to_slim
+  * [Bug reports](https://github.com/zw963/erb_to_slim/issues)
+  * [Source](https://github.com/zw963/erb_to_slim)
+  * Patches:
+    * Fork on Github.
+    * Run `gem install --dev erb_to_slim` or `bundle`.
+    * Create your feature branch: `git checkout -b my-new-feature`.
+    * Commit your changes: `git commit -am 'Add some feature'`.
+    * Push to the branch: `git push origin my-new-feature`.
+    * Send a pull request :D.
 
-## Contact
-If you found any bug, please file an issue at [github](https://github.com/zw963/erb_to_slim/issues).
+## license
 
+Released under the MIT license, See [LICENSE](https://github.com/zw963/erb_to_slim/blob/master/LICENSE) for details.
