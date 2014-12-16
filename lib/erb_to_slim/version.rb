@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 module ErbToSlim
-  VERSION = [0, 0, 7]
+  VERSION = [0, 0, 8]
 
   class << VERSION
     def to_s

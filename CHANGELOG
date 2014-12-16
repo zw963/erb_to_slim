@@ -1,4 +1,4 @@
-== LATEST
+== 0.0.8 2014-12-16
   * Use new gem template rewrite README, gemspec
   * Add CHANGELOG and LICENSE
   * Use ritual manage version.
